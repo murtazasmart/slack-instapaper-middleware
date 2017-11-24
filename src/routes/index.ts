@@ -12,12 +12,12 @@ router.get("/", (req: Request, res: Response, next: NextFunction) => {
 });
 
 router.post("/", (req, res) => {
-  console.log(req.body);
-  if(validUrl.isUri(req.body.event.text)){
-    console.log("URL is "+ req.body.event.text);
+  // console.log(req.body);
+  if(validUrl.isUri(req.body.event.message.text)){
+    console.log("URL is "+ req.body.event.message.text);
   }
   else {
-    console.log("Message is "+req.body.event.text);
+    console.log("Message is "+req.body.event.message.text);
   }
   res.status(200);
   res.type('application/json');

@@ -1,19 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const firebase = require("firebase-admin");
 // const functions = require('firebase-functions');
-var config = {
-    apiKey: "AIzaSyDYLBJK083sPEc6RjqPp99eO4BDCAhbeA0",
-    authDomain: "fir-db-6a0b7.firebaseapp.com",
-    databaseURL: "https://fir-db-6a0b7.firebaseio.com",
-    storageBucket: "fir-db-6a0b7.appspot.com"
-};
-firebase.initializeApp(config);
-var defaultDatabase = firebase.database();
-defaultDatabase.ref('users/' + "123").set({
-    username: "mujja"
-});
+// var config = {
+//   apiKey: "AIzaSyDYLBJK083sPEc6RjqPp99eO4BDCAhbeA0",
+//   authDomain: "fir-db-6a0b7.firebaseapp.com",
+//   databaseURL: "https://fir-db-6a0b7.firebaseio.com",
+//   projectId: "fir-db-6a0b7",
+//   storageBucket: "fir-db-6a0b7.appspot.com",
+//   messagingSenderId: "254583806525"
+// };
+// firebase.initializeApp({
+//   credential: firebase.credential.cert({
+//     projectId: config.apiKey,
+//     clientEmail: config.authDomain,
+//     privateKey: "-----BEGIN PRIVATE KEY-----\n<MY_PRIVATE_KEY>\n-----END PRIVATE KEY-----\n"
+//   }),
+// databaseURL: config.databaseURL
+// });
+// var defaultDatabase = firebase.database();
+// defaultDatabase.ref('users/' + "123").set({
+//   username: "mujja"
+// });
 // firebase.initializeApp({
 //   credential: firebase.credential.cert(config)
 // });
@@ -38,7 +46,7 @@ router.get("/", (req, res, next) => {
     });
 });
 router.post("/", (req, res) => {
-    console.log(req.body.challenge);
+    console.log(req.body);
     res.status(200);
     res.type('application/json');
     res.json({

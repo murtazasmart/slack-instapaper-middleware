@@ -21,9 +21,8 @@ router.post("/", (req, res) => {
     url: 'https://slack.com/api/channels.history',
     method: 'POST',
     form: {
-      "token": config.apiToken,
-      "channel": config.channels.articles,
-
+      "token": "xoxp-164141768337-164926927172-277378214515-7d70e0ba2b3880c28de368a583063a49",
+      "channel": "C832626CU"
     }
   };
   // superagent.post("https://slack.com/api/channels.history").send({

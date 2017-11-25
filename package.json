@@ -48,6 +48,7 @@
     "express": "^4.16.2",
     "firebase": "^4.6.2",
     "firebase-admin": "^5.4.0",
+    "superagent": "^3.8.1",
     "valid-url": "^1.0.9"
   }
 }

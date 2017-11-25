@@ -21,7 +21,7 @@ app.set("port", process.env.PORT || 3000);
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-app.use("/api", apiV1.router);
+app.use("/api/add", apiV1.router);
 
 
 export { app };

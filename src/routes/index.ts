@@ -40,7 +40,10 @@ router.post("/", (req, res) => {
   //   });
   // })
   request(options, (response) => {
-    res.json(response);
+    res.json({
+      "name": req.body.name,
+      response
+    });
   }); 
   // if(validUrl.isUri(req.body.event.message.text)){
   //   console.log("URL is "+ req.body.event.message.text);

@@ -16,7 +16,7 @@ router.get("/", (req: Request, res: Response, next: NextFunction) => {
 
 router.post("/", (req, res) => {
   // console.log(req.body);
-  console.log(config.nsbm);
+  // console.log(config.nsbm);
   const options = {
     url: 'https://slack.com/api/channels.history',
     method: 'POST',

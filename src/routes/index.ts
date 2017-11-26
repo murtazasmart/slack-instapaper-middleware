@@ -21,7 +21,7 @@ router.post("/", (req, res) => {
     "ts": "latest",
     "inclusive": "true",
     "count": 1
-  }).set("Content-Type", "").end((err: any, result: any) => {
+  }).end((err: any, result: any) => {
     console.log("err " + err);
     console.log("res " + result);
     res.json({

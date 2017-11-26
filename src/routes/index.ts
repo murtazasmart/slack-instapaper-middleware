@@ -15,13 +15,17 @@ router.get("/", (req: Request, res: Response, next: NextFunction) => {
 });
 
 router.post("/", (req, res) => {
-  superagent.post("https://slack.com/api/channels.history").send({
-    "token": "xoxp-164141768337-164926927172-277595731282-7c4b924abf061947ddd7bf07346b4a57",
-    "channel": "C832626CU",
-    "ts": "latest",
-    "inclusive": "true",
-    "count": 1
-  }).set("Accept", "application/json").end((err: any, result: any) => {
+  superagent.post("https://slack.com/api/channels.history").
+  params("token","xoxp-164141768337-164926927172-277595731282-7c4b924abf061947ddd7bf07346b4a57").
+  params("channel", "C832626CU").
+  // send({
+  //   "token": "xoxp-164141768337-164926927172-277595731282-7c4b924abf061947ddd7bf07346b4a57",
+  //   "channel": "C832626CU",
+  //   "ts": "latest",
+  //   "inclusive": "true",
+  //   "count": 1
+  // }).
+  set("Content-Type", "application/x-www-form-urlencoded").end((err: any, result: any) => {
     console.log("err " + err);
     console.log("res " + result);
     res.json({

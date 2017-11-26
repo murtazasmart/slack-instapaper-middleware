@@ -23,7 +23,7 @@ router.post("/", (req, res) => {
   "?count="+"1").
   set("Content-Type", "application/x-www-form-urlencoded").end((err: any, result: any) => {
     console.log("err " + err);
-    var parsedVal = JSON.parse(result.text.messages)
+    var parsedVal = JSON.parse(result.text.messages[0].username);
     console.log("res " + parsedVal);
     // const Array = result.text.messages;
     // console.log(Array[0]);

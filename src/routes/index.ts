@@ -15,19 +15,6 @@ router.get("/", (req: Request, res: Response, next: NextFunction) => {
 });
 
 router.post("/", (req, res) => {
-  // console.log(req.body);
-  // console.log(config.nsbm);
-  // const options = {
-  //   url: 'https://slack.com/api/channels.history',
-  //   method: 'POST',
-  //   form: {
-  //     token: "xoxp-164141768337-164926927172-277378214515-7d70e0ba2b3880c28de368a583063a49",
-  //     channel: "C832626CU",
-  //     inclusive: true,
-  //     ts: "latest",
-  //     count: 1
-  //   }
-  // };
   superagent.post("https://slack.com/api/channels.history").send({
     "token": "xoxp-164141768337-164926927172-277595731282-7c4b924abf061947ddd7bf07346b4a57",
     "channel": "C832626CU",

@@ -12,31 +12,25 @@ router.get("/", (req, res, next) => {
     });
 });
 router.post("/", (req, res) => {
-    // console.log(req.body);
-    console.log(config.nsbm);
-    // const options = {
-    //   url: 'https://slack.com/api/channels.history',
-    //   method: 'POST',
-    //   form: {
-    //     "token": config.apiToken,
-    //     "channel": config.channels.articles,
-    //   }
-    // };
     superagent.post("https://slack.com/api/channels.history").send({
-        "token": "xoxp-164141768337-164926927172-277378214515-7d70e0ba2b3880c28de368a583063a49",
+        "token": "xoxp-164141768337-164926927172-277595731282-7c4b924abf061947ddd7bf07346b4a57",
         "channel": "C832626CU",
         "ts": "latest",
         "inclusive": "true",
         "count": 1
-    }).end((err, result) => {
+    }).set("Content-Type", "").end((err, result) => {
         console.log("err " + err);
         console.log("res " + result);
         res.json({
-            "challenge": "hello",
+            "challenge": "mujja",
             result
         });
     });
     // request(options, (response) => {
+    //   res.json({
+    //     "name": req.body.name,
+    //     response
+    //   });
     // }); 
     // if(validUrl.isUri(req.body.event.message.text)){
     //   console.log("URL is "+ req.body.event.message.text);

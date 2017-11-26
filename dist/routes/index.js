@@ -27,7 +27,7 @@ router.post("/", (req, res) => {
         // }).
         set("Content-Type", "application/x-www-form-urlencoded").end((err, result) => {
         console.log("err " + err);
-        console.log("res " + JSON.parse(result.text));
+        console.log("res " + result.text.messages[0].username);
         res.json({
             "challenge": "mujja",
             result

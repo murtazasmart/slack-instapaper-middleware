@@ -38,7 +38,7 @@ router.post("/", (req, res) => {
     console.log("err " + err);
     console.log("res " + result);
     res.json({
-      "challenge": "hello",
+      "challenge": "mujja",
       result
     });
   })

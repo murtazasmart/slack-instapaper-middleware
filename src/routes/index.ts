@@ -21,18 +21,12 @@ router.post("/", (req, res) => {
   "&inclusive="+"true"+
   "&ts="+"latest"+
   "?count="+"1").
-  // send({
-  //   "token": "xoxp-164141768337-164926927172-277595731282-7c4b924abf061947ddd7bf07346b4a57",
-  //   "channel": "C832626CU",
-  //   "ts": "latest",
-  //   "inclusive": "true",
-  //   "count": 1
-  // }).
   set("Content-Type", "application/x-www-form-urlencoded").end((err: any, result: any) => {
     console.log("err " + err);
-    // console.log("res " + JSON.parse(result.text.messages[0]));
-    const Array = result.text.messages;
-    console.log(Array[0]);
+    var parsedVal = JSON.parse(result.text.messages)
+    console.log("res " + parsedVal);
+    // const Array = result.text.messages;
+    // console.log(Array[0]);
     // result.text.messages[0].username
     res.json({
       "challenge": "mujja",

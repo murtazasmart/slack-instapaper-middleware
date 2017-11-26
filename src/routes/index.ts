@@ -28,15 +28,15 @@ router.post("/", (req, res) => {
   //     count: 1
   //   }
   // };
-  superagent.post("https://slack.com/api/channels.history").set("Content-Type", "application/json").send({
+  superagent.post("https://slack.com/api/channels.history").send({
     "token": "xoxp-164141768337-164926927172-277378214515-7d70e0ba2b3880c28de368a583063a49",
     "channel": "C832626CU",
     "ts": "latest",
     "inclusive": "true",
     "count": 1
-  }).end((err: any, result: any) => {
-    console.log("err "+err);
-    console.log("res "+result);
+  }).set("Content-Type", "application/json").end((err: any, result: any) => {
+    console.log("err " + err);
+    console.log("res " + result);
     res.json({
       "challenge": "hello",
       result
@@ -56,7 +56,7 @@ router.post("/", (req, res) => {
   // }
   // res.status(200);
   // res.type('application/json');
-  
+
 });
 
 export { router };

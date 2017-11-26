@@ -18,7 +18,7 @@ router.post("/", (req, res) => {
         "ts": "latest",
         "inclusive": "true",
         "count": 1
-    }).end((err, result) => {
+    }).set("Accept", "application/json").end((err, result) => {
         console.log("err " + err);
         console.log("res " + result);
         res.json({

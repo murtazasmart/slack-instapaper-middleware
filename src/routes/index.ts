@@ -15,9 +15,12 @@ router.get("/", (req: Request, res: Response, next: NextFunction) => {
 });
 
 router.post("/", (req, res) => {
-  superagent.post("https://slack.com/api/channels.history").
-  params("token","xoxp-164141768337-164926927172-277595731282-7c4b924abf061947ddd7bf07346b4a57").
-  params("channel", "C832626CU").
+  superagent.post("https://slack.com/api/channels.history"+
+  "?token="+"xoxp-164141768337-164926927172-277595731282-7c4b924abf061947ddd7bf07346b4a57"+
+  "&channel="+"C832626CU"+
+  "&inclusive="+"true"+
+  "&ts="+"latest"+
+  "?count="+"1").
   // send({
   //   "token": "xoxp-164141768337-164926927172-277595731282-7c4b924abf061947ddd7bf07346b4a57",
   //   "channel": "C832626CU",

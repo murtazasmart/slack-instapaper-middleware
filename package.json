@@ -4,7 +4,7 @@
   "description": "Middleware to digest Slack webhook and trigger Instapaper API",
   "main": "index.js",
   "scripts": {
-    "start": "node ./dist/server.js",
+    "start": "npm run build && node ./dist/server.js",
     "start:watch": "nodemon",
     "build": "npm run build-ts",
     "build-ts": "tsc"
